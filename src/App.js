@@ -5,15 +5,20 @@ import NasaPhoto from "./components/NasaPhotoCard";
 
 function App(props) {
   const [nasaPhoto, setNasaPhoto] = useState([]);
+  const [data, setData] = useState({});
 
+useEffect(() => {
   axios
     .get(
-      "https://api.nasa.gov/planetary/apod?api_key=Hazl0FJIBuk0P2EKP10s11GYecRfGejGLStOODx"
+      "https://api.nasa.gov/planetary/apod?api_key=Hazl0FJIBuk0P2EKP10s11GYecRfGejGLStOODxT"
     )
     .then(response => {
       console.log(response.data);
       setNasaPhoto(response.data);
+      setData(response.data);
     });
+}, [])
+
 
   return (
     <div className="App">
@@ -25,7 +30,7 @@ function App(props) {
         </span>
         !
       </p>
-      <NasaPhoto title="NASA APOD" url="#" text="text" />
+      <NasaPhoto title={data.title} url={data.url} explanation={data.explanation} />
     </div>
   );
 }
