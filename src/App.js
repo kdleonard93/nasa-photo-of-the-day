@@ -4,9 +4,13 @@ import axios from "axios";
 import NasaPhoto from "./components/NasaPhotoCard";
 
 function App(props) {
+<<<<<<< Updated upstream
   const [date, setdate] = useState("2019-08-28");
   const [data, setData] = useState({});
   
+=======
+  const [data, setData] = useState({});
+>>>>>>> Stashed changes
 
 
   // useEffect for fetching APOD
@@ -32,7 +36,15 @@ useEffect(() => {
         </span>
         !
       </p>
+<<<<<<< Updated upstream
       <NasaPhoto title={data.title} url={data.url} explanation={data.explanation} />
+=======
+      <NasaPhoto
+        title={data.title}
+        url={data.url}
+        explanation={data.explanation}
+      />
+>>>>>>> Stashed changes
     </div>
   );
 }
