@@ -1,9 +1,20 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import NasaPhoto from "./components/NasaPhotoCard";
 import axios from "axios";
+import NasaPhoto from "./components/NasaPhotoCard";
 
 function App(props) {
+  const [nasaPhoto, setNasaPhoto] = useState([]);
+
+  axios
+    .get(
+      "https://api.nasa.gov/planetary/apod?api_key=Hazl0FJIBuk0P2EKP10s11GYecRfGejGLStOODx"
+    )
+    .then(response => {
+      console.log(response.data);
+      setNasaPhoto(response.data);
+    });
+
   return (
     <div className="App">
       <p>
@@ -14,7 +25,7 @@ function App(props) {
         </span>
         !
       </p>
-      <NasaPhoto />
+      <NasaPhoto title="NASA APOD" url="#" text="text" />
     </div>
   );
 }
