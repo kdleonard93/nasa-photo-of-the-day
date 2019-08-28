@@ -4,27 +4,20 @@ import axios from "axios";
 import NasaPhoto from "./components/NasaPhotoCard";
 
 function App(props) {
-<<<<<<< Updated upstream
   const [date, setdate] = useState("2019-08-28");
   const [data, setData] = useState({});
-  
-=======
-  const [data, setData] = useState({});
->>>>>>> Stashed changes
-
 
   // useEffect for fetching APOD
-useEffect(() => {
-  axios
-    .get(
-      "https://api.nasa.gov/planetary/apod?api_key=Hazl0FJIBuk0P2EKP10s11GYecRfGejGLStOODxT"
-    )
-    .then(response => {
-      console.log(response.data);
-      setData(response.data);
-    });
-}, [])
-
+  useEffect(() => {
+    axios
+      .get(
+        "https://api.nasa.gov/planetary/apod?api_key=Hazl0FJIBuk0P2EKP10s11GYecRfGejGLStOODxT"
+      )
+      .then(response => {
+        console.log(response.data);
+        setData(response.data);
+      });
+  }, []);
 
   return (
     <div className="App">
@@ -36,15 +29,11 @@ useEffect(() => {
         </span>
         !
       </p>
-<<<<<<< Updated upstream
-      <NasaPhoto title={data.title} url={data.url} explanation={data.explanation} />
-=======
       <NasaPhoto
         title={data.title}
         url={data.url}
         explanation={data.explanation}
       />
->>>>>>> Stashed changes
     </div>
   );
 }
