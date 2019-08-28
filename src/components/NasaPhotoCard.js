@@ -7,7 +7,9 @@ function NasaPhoto(props) {
 
   useEffect(() => {
     axios
-      .get("https://api.nasa.gov/planetary/apod")
+      .get(
+        "https://api.nasa.gov/planetary/apod?api_key=Hazl0FJIBuk0P2EKP10s11GYecRfGejGLStOODx"
+      )
       .then(response => {
         setNasaPhoto(response.data);
         console.log(`Response: ${response.data}`);
