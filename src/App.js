@@ -16,7 +16,10 @@ function App(props) {
       .then(response => {
         console.log(response.data);
         setData(response.data);
-      });
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }, []);
 
   return (
