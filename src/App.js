@@ -4,7 +4,7 @@ import axios from "axios";
 import NasaPhoto from "./components/NasaPhotoCard";
 
 function App(props) {
-  const [date, setdate] = useState("2019-08-28");
+  // const [date, setdate] = useState("2019-08-28");
   const [data, setData] = useState({});
 
   // useEffect for fetching APOD
