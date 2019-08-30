@@ -6,7 +6,6 @@ const Title = styled.h2``;
 
 // Styles for my Body
 const Body = styled.div`
-  height: 100%;
   background-color: rgba(123, 124, 209, 0.9);
 `;
 
