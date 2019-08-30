@@ -11,7 +11,7 @@ function App(props) {
   useEffect(() => {
     axios
       .get(
-        "https://api.nasa.gov/planetary/apod?api_key=Hazl0FJIBuk0P2EKP10s11GYecRfGejGLStOODxT&date=2019-03-23"
+        `https://api.nasa.gov/planetary/apod?api_key=Hazl0FJIBuk0P2EKP10s11GYecRfGejGLStOODxT&date=${props.activeDate}`
       )
       .then(response => {
         console.log(response.data);
@@ -20,7 +20,7 @@ function App(props) {
       .catch(error => {
         console.log(error);
       });
-  }, []);
+  }, [props.activeDate]);
 
   return (
     <div className="App">
